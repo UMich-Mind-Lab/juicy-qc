@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    	<!-- iOS meta tags -->
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    	<link rel="stylesheet" type="text/css" href="papaya.css?build=1449" />
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="papaya.js?build=1449"></script>
+
+    	<title>Papaya Viewer</title>
+
+    	<script type="text/javascript">
+	 var params = [];
+	 params["fullScreenPadding"] = true;
+	 params["worldSpace"] = true;
+	</script>
+	<script src="envvars.js" >
+	</script>
+	<script src="papaya_qc_code.js" >
+	</script>
+
+    </head>
+
+    <body style="background:#000000">
+
+	<div style="text-align:center" >
+	    <div id="instructions" style="text-align:left;display:inline-block;width:1000px;padding:20px;color:#FFFFFF;border: 5px double white;border-radius:20px">
+		<div style="display:inline-block;width:50%" >
+		Press <b style="color:#FF0000">s</b> to start rating images<br>
+		Press <b style="color:#FF0000">left arrow key</b> for bad coregistration<br>
+		Press <b style="color:#FF0000">right arrow key</b> for good coregistration<br>
+		Press <b style="color:#FF0000">space bar</b> to return to the previous image to re-rate<br>
+		    Press <b style="color:#FF0000">f</b> to flag the image for extra review<br><br>
+		</div>
+		<div style="display:inline-block;width:50%;float:right" >
+		    When you are done rating images, press the <b style="color:#FF0000">Save QC CSV</b> button</b><br>
+		    <input id="SaveCSV" type="button" value="Save QC CSV" onclick="SaveCSV();" />
+		</div>
+	    </div>
+	</div>
+	<div id="subject" style="color:#00FFFF">subject id</div>
+	<div class="papaya" data-params="params"></div>
+
+    </body>
+</html>

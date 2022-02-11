@@ -1,0 +1,6 @@
+{
+  "check_name":{
+    "overlay":"{data_dir}/sub-{subject}/path/to/overlay.nii.gz",
+    "image":"{data_dir}/sub-{subject}/path/to/image.nii.gz",
+    "qcDir":"{data_dir}/sub-{subject}/path/to/qc"
+  }
