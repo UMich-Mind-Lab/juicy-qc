@@ -13,6 +13,7 @@ Juicy-qc provides some automation for simple registration checks of MRI files. I
 ### juicy-qc.py ###
 
 #### output of juicy-qc.py -h | --help ####
+```
 usage: juicy-qc.py [-h] -d DATA_DIR -c CHECK [-n N_BATCH] [--filter FILTER [FILTER ...]] [--browser-cmd BROWSER_CMD]
                    [--config CONFIG] [--papaya-template-dir PAPAYA_TEMPLATE_DIR] [--fail | --flag | --unlock | --summary]
 
@@ -38,6 +39,7 @@ optional arguments:
   --flag                search through images that have been flagged within current query.
   --unlock              remove lock files for current query
   --summary             output summary text for current query
+```
 
 *On --filter:* This command allows us to filter via a format wildcard in config.json, and then apply possible values. For example, If my current `check` uses a format fieldname `task`, and I only want to search for files matching `task` "mid" or "gng" (ignoring "nback"), then I can add the --filter task mid gng to my launch command.
 
