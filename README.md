@@ -32,18 +32,20 @@ optional arguments:
                         subsequent arguments denote possible values
   --browser-cmd BROWSER_CMD
                         specify browser command [DEFAULT = "firefox"]
-  --config CONFIG       specify config file [DEFAULT = /home/burtonjz/juicy-qc/config.json]
+  --config CONFIG       specify config file [DEFAULT = ./juicy-qc/config.json]
   --papaya-template-dir PAPAYA_TEMPLATE_DIR
-                        specify papaya template folder [DEFAULT = /home/burtonjz/juicy-qc/papaya_template]
+                        specify papaya template folder [DEFAULT = ./juicy-qc/papaya_template]
   --fail                search through images that have been failed within current query
   --flag                search through images that have been flagged within current query.
   --unlock              remove lock files for current query
   --summary             output summary text for current query
 ```
 
-*On --filter:* This command allows us to filter via a format wildcard in config.json, and then apply possible values. For example, If my current `check` uses a format fieldname `task`, and I only want to search for files matching `task` "mid" or "gng" (ignoring "nback"), then I can add the --filter task mid gng to my launch command.
+*On --filter:* This command allows us to filter via a format wildcard in config.json, and then apply possible values. For example, If my current `check` uses a format fieldname `task`, and I only want to search for files matching `task` "mid" or "gng" (ignoring "nback"), then I can add `--filter task mid gng` to my launch command:
 
-This script will:
+`./juicy-qc.py -d my_data_folder -c check_from_config --filter task mid gng --filter session 1`
+
+Overall, this script will:
 * find all files matching format strings for selected `check`
 * filter files based on following criteria
   * not locked (by another instance of juicy-qc)
@@ -86,3 +88,10 @@ Juicy-qc requires a JSON formatted config file, stored in this directory as "con
   }
 }
 ```
+
+### Note on Papaya ###
+
+By default, this script uses firefox as the browser for papaya. Due to our setup, we do need to update some firefox security settings the first time this is used on a particular computer. This can be done by: 
+
+* type "about:config" into the address bar, and hit enter. Accept risks
+* search for the setting "security.fileuri.strict_origin_policy", and ensure that it is set to false
